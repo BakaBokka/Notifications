@@ -6,7 +6,7 @@ import { store } from "./db";
 
 function App() {
   const [shown, setShown] = useState(false);
-  const data = store.notifications
+  const data = store.notifications;
 
   const handleShown = () => {
     setShown(!shown);

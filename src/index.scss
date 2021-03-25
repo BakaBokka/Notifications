@@ -5,6 +5,11 @@
 }
 @font-face {
   font-family: 'Open Sans';
+  font-weight: 700;
+  src:  url(./fonts/OpenSans/OpenSans-Bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
   font-weight: 600;
   src:  url(./fonts/OpenSans/OpenSans-SemiBold.woff2) format('woff2');
 }

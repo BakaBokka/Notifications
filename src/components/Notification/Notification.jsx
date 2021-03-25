@@ -8,8 +8,6 @@ function Notification({ shown, handleShown, data }) {
     setHovered(!hovered);
   };
 
-  console.log(data);
-
   return (
     <div
       className={
