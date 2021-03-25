@@ -1,7 +1,7 @@
 import React from "react";
 import "./NotificationPopup.scss";
-import bell from "../../img/bell_empty.png";
-import close from "../../img/close.png";
+import bell from "../../img/bell_empty.svg";
+import close from "../../img/close.svg";
 
 function NotificationPopup({ data }) {
   return (

@@ -12,6 +12,7 @@
   &__header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     // padding: 0 0 20px;
     box-sizing: border-box;
   }
@@ -30,7 +31,7 @@
   }
 
   &__button {
-
+    display: flex;
     border: none;
     outline: none;
     font-family: "Open Sans";
@@ -44,13 +45,10 @@
 
     color: #2051a3;
     background-color: transparent;
-
   }
 
   &__closeIcon {
     display: none;
-
-
   }
 
   &__content {
@@ -98,7 +96,10 @@
     &__emptyPlug {
       margin: 0;
       transform: translateY(-50%);
+    }
 
+    &__button {
+      display: none;
     }
 
     &__closeIcon {
