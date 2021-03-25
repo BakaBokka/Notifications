@@ -9,7 +9,9 @@ function NotificationPopup({ data }) {
       <header className="NotificationPopup__header">
         <h2 className="NotificationPopup__title">Уведомления</h2>
 
-        {data && <button className="NotificationPopup__button">Прочитать все</button>}
+        {data && (
+          <button className="NotificationPopup__button">Прочитать все</button>
+        )}
 
         <img
           className="NotificationPopup__closeIcon"
@@ -25,7 +27,7 @@ function NotificationPopup({ data }) {
             <img
               className="NotificationPopup__emptyPlug-icon"
               src={bell}
-              alt="Картинка колокольчик-уведомление"
+              alt="Иконка колокольчик-заглушка"
             />
             <p className="NotificationPopup__text">
               Здесь будут уведомления по вашим заказам, акциям.
