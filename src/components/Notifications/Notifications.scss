@@ -1,0 +1,91 @@
+.Notifications {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans";
+  font-style: normal;
+
+  &__item {
+    padding: 15px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eeeff1;
+    border-top: 1px solid #eeeff1;
+    text-align: left;
+  }
+  &__item-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 0 5px;
+  }
+
+  &__item-indicator-wrap {
+    position: absolute;
+    top: 4;
+    left: -15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12px;
+    height: 12px;
+    border-radius: 38px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(32, 81, 163, 0.05);
+    }
+  }
+  &__item-indicator {
+    width: 5px;
+    height: 5px;
+    /* original-blue */
+
+    background: #2051a3;
+    border-radius: 38px;
+  }
+
+  &__item-title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    /* identical to box height */
+    /* very-dark-blue */
+    color: #0b1f35;
+
+  }
+
+  &__item-order {
+    color: #2051a3;
+    margin: 0 5px 0 0;
+  }
+
+  &__item-text {
+    margin: 0 0 10px;
+    font-size: 12px;
+    line-height: 16px;
+
+    /* original-gray */
+
+    color: #9b9fb3;
+  }
+
+  &__item-paydate {
+    font-size: 12px;
+    line-height: 16px;
+
+    /* very-dark-blue */
+
+    color: #0b1f35;
+  }
+
+  &__item-date {
+    font-size: 10px;
+    line-height: 14px;
+    /* identical to box height */
+
+    /* original-gray */
+
+    color: #9b9fb3;
+  }
+}
