@@ -4,7 +4,17 @@ import bell from "../../img/bell_empty.svg";
 import close from "../../img/close.svg";
 import Notifications from "../Notifications/Notifications";
 
-function NotificationPopup({ data }) {
+function NotificationPopup({ data, setData }) {
+  const handleReadAlL = () => {
+    const newData = data.map((item) => {
+      const newItem = {
+        ...item,
+        closed: true,
+      };
+      return newItem;
+    });
+    setData(newData);
+  };
   return (
     <div
       className={
@@ -16,11 +26,11 @@ function NotificationPopup({ data }) {
           <h2 className="NotificationPopup__title">Уведомления</h2>
 
           {data && (
-            <button className="NotificationPopup__button">Прочитать все</button>
-          )}
-          {data && (
-            <button className="NotificationPopup__buttonMobile">
-              Отметить прочитанными
+            <button
+              className="NotificationPopup__button"
+              onClick={handleReadAlL}
+            >
+              Прочитать все
             </button>
           )}
         </div>
@@ -33,7 +43,7 @@ function NotificationPopup({ data }) {
       </header>
       <div className="NotificationPopup__content">
         {data ? (
-         <Notifications data={data}/>
+          <Notifications data={data} setData={setData} />
         ) : (
           <div className="NotificationPopup__emptyPlug">
             <img
@@ -46,7 +56,6 @@ function NotificationPopup({ data }) {
             </p>
           </div>
         )}
-
       </div>
       <div className="NotificationPopup__overlay"></div>
     </div>

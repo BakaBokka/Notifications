@@ -1,27 +1,99 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Notifications.scss";
-function Notifications({ data }) {
+import SetReadButton from "../SetReadButton/SetReadButton";
+import ShowMoreButton from "../ShowMoreButton/ShowMoreButton";
+function Notifications({ data, setData }) {
+  const [coords, setCoords] = useState("");
+  const [itemId, setItemId] = useState("");
+
+  //Координаты для кнопки
+  const buttonCoords = {
+    top: `${coords.y - 49}px`,
+    left: `${coords.x - 16}px`,
+  };
+
+  //Обработчики
+  const handleHoverOn = (e, id) => {
+    setCoords(e.target.getBoundingClientRect());
+    setItemId(id);
+    console.log(itemId);
+  };
+
+  const handleHoverOff = () => {
+    setTimeout(setCoords, 700, "");
+  };
+
+  const handleRead = (id) => {
+    const item = data.find((item) => id === item.id);
+    const itemIndex = data.findIndex((item) => id === item.id);
+    const newItem = {
+      ...item,
+      closed: true,
+    };
+    setData([
+      ...data.slice(0, itemIndex),
+      newItem,
+      ...data.slice(itemIndex + 1),
+    ]);
+  };
+
+  //Собираем список уведомлений
   const notificationElement = data.map((item) => {
     return (
-      <li className="Notifications__item" key={item.id}>
-        <header className="Notifications__item-header">
-          <div className="Notifications__item-indicator-wrap"><div className="Notifications__item-indicator"></div></div>
+      <li
+        className="Notifications__item"
+        key={item.id}
+        onClick={() => handleRead(item.id)}
+      >
+        <a className="Notifications__item-link" href="#s">
+          <header className="Notifications__item-header">
+            {!item.closed && (
+              <div className="Notifications__item-indicator-wrap">
+                <div
+                  className="Notifications__item-indicator"
+                  onMouseOver={(e) => handleHoverOn(e, item.id)}
+                  onMouseOut={handleHoverOff}
+                ></div>
+              </div>
+            )}
 
-        <h3 className="Notifications__item-title" >
-          <span className="Notifications__item-order">{item.title.order}</span>
-          {item.title.text}
-        </h3>
-        </header>
-        <p className="Notifications__item-text">
-          {item.message.text}
-          <span className="Notifications__item-paydate" >{item.message.date}</span>
-        </p>
-        <p className="Notifications__item-date">{item.date}</p>
+            <h3 className="Notifications__item-title">
+              <span className="Notifications__item-order">
+                {item.title.order}
+              </span>
+              {item.title.text}
+            </h3>
+          </header>
+          <p className="Notifications__item-text">
+            {item.message.text}
+            <span className="Notifications__item-paydate">
+              {item.message.date}
+            </span>
+          </p>
+          <p className="Notifications__item-date">{item.date}</p>
+        </a>
       </li>
     );
   });
 
-  return <ul className="Notifications">{notificationElement}</ul>;
+  return (
+    <>
+    <ul className="Notifications">
+      {notificationElement}
+      {coords && (
+        <div
+          className="Notifications__item-header-button"
+          onClick={() => handleRead(itemId)}
+          style={buttonCoords}
+        >
+          <SetReadButton />
+        </div>
+      )}
+
+    </ul>
+    <ShowMoreButton/>
+    </>
+  );
 }
 
 export default Notifications;

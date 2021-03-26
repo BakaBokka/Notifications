@@ -17,7 +17,7 @@ export const store = {
     },
     {
       id: 2,
-      closed: false,
+      closed: true,
       title: {
         order: "Заказ 2",
         text: "ожидает оплаты 20 марта - 18:00",

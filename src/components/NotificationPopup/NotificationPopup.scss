@@ -9,6 +9,7 @@
   box-shadow: -5px -20px 20px rgba(26, 49, 92, 0.05),
     5px 20px 20px rgba(26, 49, 92, 0.05);
   border-radius: 15px;
+  z-index: 1;
 
   &_empty {
     height: 390px;
@@ -24,11 +25,13 @@
   }
 
   &__header-content {
+    position: relative;
     max-width: 100%;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 2;
   }
 
   &__title {
@@ -62,23 +65,7 @@
     background-color: transparent;
   }
 
-  &__buttonMobile {
-    display: none;
-    border: none;
-    outline: none;
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 16px;
-    padding: 0;
-    cursor: pointer;
 
-    /* original-blue */
-
-    color: #2051a3;
-    background-color: transparent;
-  }
 
   &__closeIcon {
     display: none;
@@ -89,7 +76,9 @@
     height: 500px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     overflow: scroll;
+
     &::-webkit-scrollbar {
       width: 0;
     }
@@ -106,6 +95,7 @@
       #ffffff 54.95%,
       rgba(255, 255, 255, 0) 111.63%
     );
+    z-index: 5;
   }
   &__emptyPlug {
     max-width: 250px;
@@ -156,13 +146,6 @@
 
     &__title {
       margin: 0 0 10px;
-    }
-
-    &__button {
-      display: none;
-    }
-    &__buttonMobile {
-      display: flex;
     }
 
     &__closeIcon {

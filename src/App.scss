@@ -1,4 +1,5 @@
 .App {
+  position: relative;
   height: 100vh;
   text-align: center;
   display: flex;
@@ -7,6 +8,7 @@
   padding: 50px 0 0;
   box-sizing: border-box;
   background-color: #eee;
+  z-index: 5;
 }
 
 .App-logo {
@@ -33,13 +35,4 @@
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
