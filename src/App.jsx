@@ -20,7 +20,7 @@ function App() {
         handleShown={handleShown}
         data={data.length}
       />
-      {shown && <NotificationPopup data={data.slice(0, 10)} setData={setData} />}
+      {shown && <NotificationPopup data={data} setData={setData} />}
     </div>
   );
 }

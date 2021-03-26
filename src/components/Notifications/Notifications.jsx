@@ -1,29 +1,25 @@
 import React, { useState } from "react";
 import "./Notifications.scss";
-import SetReadButton from "../SetReadButton/SetReadButton";
-import ShowMoreButton from "../ShowMoreButton/ShowMoreButton";
+import NotificationButton from "../NotificationButton/NotificationButton";
 function Notifications({ data, setData }) {
   const [coords, setCoords] = useState("");
   const [itemId, setItemId] = useState("");
-
-  //Координаты для кнопки
-  const buttonCoords = {
-    top: `${coords.y - 49}px`,
-    left: `${coords.x - 16}px`,
-  };
+  const [pageSize, setPageSize] = useState(10);
+  let shownData = data.slice(0, pageSize);
 
   //Обработчики
   const handleHoverOn = (e, id) => {
     setCoords(e.target.getBoundingClientRect());
     setItemId(id);
-    console.log(itemId);
   };
 
   const handleHoverOff = () => {
     setTimeout(setCoords, 700, "");
   };
 
-  const handleRead = (id) => {
+  const handleRead = (e, id = itemId) => {
+    e.stopPropagation();
+    console.log(id);
     const item = data.find((item) => id === item.id);
     const itemIndex = data.findIndex((item) => id === item.id);
     const newItem = {
@@ -37,13 +33,17 @@ function Notifications({ data, setData }) {
     ]);
   };
 
+  const handleShowMore = (e) => {
+    setPageSize(pageSize + 10);
+  };
+
   //Собираем список уведомлений
-  const notificationElement = data.map((item) => {
+  const notificationElement = shownData.map((item) => {
     return (
       <li
         className="Notifications__item"
         key={item.id}
-        onClick={() => handleRead(item.id)}
+        onClick={(e) => handleRead(e, item.id)}
       >
         <a className="Notifications__item-link" href="#s">
           <header className="Notifications__item-header">
@@ -78,20 +78,12 @@ function Notifications({ data, setData }) {
 
   return (
     <>
-    <ul className="Notifications">
-      {notificationElement}
-      {coords && (
-        <div
-          className="Notifications__item-header-button"
-          onClick={() => handleRead(itemId)}
-          style={buttonCoords}
-        >
-          <SetReadButton />
-        </div>
-      )}
+      <ul className="Notifications">
+        {notificationElement}
 
-    </ul>
-    <ShowMoreButton/>
+        {coords && <NotificationButton handler={handleRead} coords={coords} />}
+      </ul>
+      <NotificationButton handler={handleShowMore} />
     </>
   );
 }

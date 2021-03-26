@@ -1,0 +1,41 @@
+.NotificationButton {
+  width: fit-content;
+  padding: 9px 25px;
+  margin: 20px 0;
+  outline: none;
+  border: 1px solid #2051a3;
+  box-sizing: border-box;
+  border-radius: 35px;
+  font-family: " Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+
+  color: #2051a3;
+  transition-duration: 0.6s;
+  cursor: pointer;
+
+  &_type_more {
+    &:hover {
+      background: #2051a3;
+      color: #fff;
+    }
+  }
+
+  &_type_read {
+    position: fixed;
+    z-index: 10;
+    background: #2051a3;
+    color: #fff;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 18%;
+      bottom: -15px;
+      transform: translateX(-50%);
+      border: 8px solid transparent;
+      border-top: 10px solid#2051a3;
+    }
+  }
+}
