@@ -65,9 +65,9 @@ function Notifications({ data, setData }) {
           </header>
           <p className="Notifications__item-text">
             {item.message.text}
-            <span className="Notifications__item-paydate">
+           {item.message.payDate && <span className="Notifications__item-paydate">
               {item.message.payDate}
-            </span>
+            </span>}
           </p>
           <p className="Notifications__item-date">{item.date}</p>
         </a>
