@@ -6,7 +6,7 @@ import Notifications from "../Notifications/Notifications";
 
 function NotificationPopup({ data, setData, handleShown }) {
   const handleReadAll = () => {
-    const newData = data.map((item) => ({...item, closed: true}))
+    const newData = data.map((item) => ({ ...item, closed: true }));
     setData(newData);
   };
   return (
@@ -52,7 +52,7 @@ function NotificationPopup({ data, setData, handleShown }) {
           </div>
         )}
       </div>
-      <div className="NotificationPopup__overlay"/>
+      <div className="NotificationPopup__overlay" />
     </div>
   );
 }

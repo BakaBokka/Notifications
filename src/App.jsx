@@ -8,7 +8,7 @@ import { store } from "./db";
 function App() {
   const [shown, setShown] = useState(false);
   const [data, setData] = useState(store.notifications);
-  const counter = data.filter((item) => item.closed === false)
+  const counter = data.filter((item) => item.closed === false);
 
   const handleShown = () => {
     setShown(!shown);

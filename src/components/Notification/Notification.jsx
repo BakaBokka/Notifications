@@ -30,7 +30,7 @@ function Notification({ shown, handleShown, counter, siteMode }) {
         <div className="Notification__counter-wrap">
           <span className="Notification__counter">{counter}</span>
         </div>
-      ): null}
+      ) : null}
     </div>
   );
 }

@@ -19,7 +19,6 @@ function Notifications({ data, setData }) {
   };
 
   const handleRead = (e, id = itemId) => {
-
     const item = data.find((item) => id === item.id);
     const itemIndex = data.findIndex((item) => id === item.id);
     const newItem = {
@@ -38,7 +37,7 @@ function Notifications({ data, setData }) {
   };
 
   //Собираем список уведомлений
-  const notificationElement = shownData.map((item) => {
+  const notificationElements = shownData.map((item) => {
     return (
       <li
         className="Notifications__item"
@@ -67,7 +66,7 @@ function Notifications({ data, setData }) {
           <p className="Notifications__item-text">
             {item.message.text}
             <span className="Notifications__item-paydate">
-              {item.message.date}
+              {item.message.payDate}
             </span>
           </p>
           <p className="Notifications__item-date">{item.date}</p>
@@ -79,13 +78,22 @@ function Notifications({ data, setData }) {
   return (
     <>
       <ul className="Notifications">
-        {notificationElement}
+        {notificationElements}
 
-        {coords && <NotificationButton handler={handleRead} coords={coords} />}
+        {coords && (
+          <NotificationButton
+            text="Прочитано"
+            handler={handleRead}
+            coords={coords}
+          />
+        )}
       </ul>
 
+      {/* Тут больше поставил отступ, а то в Firefox'e кнопка попадает под оверлей */}
       <div className="Notifications__button-wrap">
-        {!dataLength && <NotificationButton handler={handleShowMore} />}
+        {!dataLength && (
+          <NotificationButton text="Показать ещё" handler={handleShowMore} />
+        )}
       </div>
     </>
   );

@@ -1,7 +1,8 @@
 import React from "react";
 import "./NotificationButton.scss";
 
-function NotificationButton({ handler, coords }) {
+function NotificationButton({ text, handler, coords }) {
+  
   //Координаты для кнопки
   const buttonCoords = coords
     ? {
@@ -20,7 +21,7 @@ function NotificationButton({ handler, coords }) {
       style={buttonCoords}
       onClick={(e) => handler(e)}
     >
-      {coords ? "Прочитать" : "Показать еще"}
+      {text}
     </button>
   );
 }
