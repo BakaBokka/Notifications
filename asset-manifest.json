@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Notifications/static/css/main.45e43cb4.chunk.css",
-    "main.js": "/Notifications/static/js/main.33d12804.chunk.js",
-    "main.js.map": "/Notifications/static/js/main.33d12804.chunk.js.map",
+    "main.css": "/Notifications/static/css/main.440fa8fd.chunk.css",
+    "main.js": "/Notifications/static/js/main.169dc099.chunk.js",
+    "main.js.map": "/Notifications/static/js/main.169dc099.chunk.js.map",
     "runtime-main.js": "/Notifications/static/js/runtime-main.0fc23180.js",
     "runtime-main.js.map": "/Notifications/static/js/runtime-main.0fc23180.js.map",
     "static/js/2.c3958e2b.chunk.js": "/Notifications/static/js/2.c3958e2b.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.2cd541e4.chunk.js": "/Notifications/static/js/3.2cd541e4.chunk.js",
     "static/js/3.2cd541e4.chunk.js.map": "/Notifications/static/js/3.2cd541e4.chunk.js.map",
     "index.html": "/Notifications/index.html",
-    "static/css/main.45e43cb4.chunk.css.map": "/Notifications/static/css/main.45e43cb4.chunk.css.map",
+    "static/css/main.440fa8fd.chunk.css.map": "/Notifications/static/css/main.440fa8fd.chunk.css.map",
     "static/js/2.c3958e2b.chunk.js.LICENSE.txt": "/Notifications/static/js/2.c3958e2b.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/Notifications/static/media/OpenSans-SemiBold.fefe5002.woff2",
     "static/media/bell.a02481de.svg": "/Notifications/static/media/bell.a02481de.svg",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.0fc23180.js",
     "static/js/2.c3958e2b.chunk.js",
-    "static/css/main.45e43cb4.chunk.css",
-    "static/js/main.33d12804.chunk.js"
+    "static/css/main.440fa8fd.chunk.css",
+    "static/js/main.169dc099.chunk.js"
   ]
 }
