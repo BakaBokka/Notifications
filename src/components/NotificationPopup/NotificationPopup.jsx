@@ -5,14 +5,8 @@ import close from "../../img/close.svg";
 import Notifications from "../Notifications/Notifications";
 
 function NotificationPopup({ data, setData, handleShown }) {
-  const handleReadAlL = () => {
-    const newData = data.map((item) => {
-      const newItem = {
-        ...item,
-        closed: true,
-      };
-      return newItem;
-    });
+  const handleReadAll = () => {
+    const newData = data.map((item) => ({...item, closed: true}))
     setData(newData);
   };
   return (
@@ -28,7 +22,7 @@ function NotificationPopup({ data, setData, handleShown }) {
           {data && (
             <button
               className="NotificationPopup__button"
-              onClick={handleReadAlL}
+              onClick={handleReadAll}
             >
               Прочитать все
             </button>
@@ -46,9 +40,9 @@ function NotificationPopup({ data, setData, handleShown }) {
         {data ? (
           <Notifications data={data} setData={setData} />
         ) : (
-          <div className="NotificationPopup__emptyPlug">
+          <div className="NotificationPopup__empty-plug">
             <img
-              className="NotificationPopup__emptyPlug-icon"
+              className="NotificationPopup__empty-plug-icon"
               src={bell}
               alt="Иконка колокольчик-заглушка"
             />
@@ -58,7 +52,7 @@ function NotificationPopup({ data, setData, handleShown }) {
           </div>
         )}
       </div>
-      <div className="NotificationPopup__overlay"></div>
+      <div className="NotificationPopup__overlay"/>
     </div>
   );
 }

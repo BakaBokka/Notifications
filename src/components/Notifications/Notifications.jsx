@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "./Notifications.scss";
 import NotificationButton from "../NotificationButton/NotificationButton";
 function Notifications({ data, setData }) {
-  const [coords, setCoords] = useState("");
+  const [coords, setCoords] = useState(null);
   const [itemId, setItemId] = useState("");
   const [pageSize, setPageSize] = useState(10);
   let shownData = data.slice(0, pageSize);
+  const dataLength = data.length === shownData.length;
 
   //Обработчики
   const handleHoverOn = (e, id) => {
@@ -14,12 +15,11 @@ function Notifications({ data, setData }) {
   };
 
   const handleHoverOff = () => {
-    setTimeout(setCoords, 700, "");
+    setTimeout(setCoords, 700, null);
   };
 
   const handleRead = (e, id = itemId) => {
-    e.stopPropagation();
-    console.log(id);
+
     const item = data.find((item) => id === item.id);
     const itemIndex = data.findIndex((item) => id === item.id);
     const newItem = {
@@ -83,8 +83,9 @@ function Notifications({ data, setData }) {
 
         {coords && <NotificationButton handler={handleRead} coords={coords} />}
       </ul>
+
       <div className="Notifications__button-wrap">
-        <NotificationButton handler={handleShowMore} />
+        {!dataLength && <NotificationButton handler={handleShowMore} />}
       </div>
     </>
   );

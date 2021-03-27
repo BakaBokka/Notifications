@@ -3,7 +3,7 @@ import "./Notification.scss";
 import bell from "../../img/bell.svg";
 import blueBell from "../../img/bell_blue.svg";
 
-function Notification({ shown, handleShown, data, siteMode }) {
+function Notification({ shown, handleShown, counter, siteMode }) {
   const [hovered, setHovered] = useState(false);
   const handleHover = () => {
     setHovered(!hovered);
@@ -26,11 +26,11 @@ function Notification({ shown, handleShown, data, siteMode }) {
         src={siteMode === "person" ? bell : blueBell}
         alt="Иконка колокольчи-уведомление"
       />
-      {data && (
+      {counter ? (
         <div className="Notification__counter-wrap">
-          <span className="Notification__counter">{data}</span>
+          <span className="Notification__counter">{counter}</span>
         </div>
-      )}
+      ): null}
     </div>
   );
 }
