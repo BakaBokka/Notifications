@@ -21,7 +21,13 @@ function App() {
         data={data.length}
         siteMode={store.siteMode}
       />
-      {shown && <NotificationPopup data={data} setData={setData} />}
+      {shown && (
+        <NotificationPopup
+          data={data}
+          setData={setData}
+          handleShown={handleShown}
+        />
+      )}
     </div>
   );
 }

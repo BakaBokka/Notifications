@@ -4,7 +4,7 @@ import bell from "../../img/bell_empty.svg";
 import close from "../../img/close.svg";
 import Notifications from "../Notifications/Notifications";
 
-function NotificationPopup({ data, setData }) {
+function NotificationPopup({ data, setData, handleShown }) {
   const handleReadAlL = () => {
     const newData = data.map((item) => {
       const newItem = {
@@ -39,6 +39,7 @@ function NotificationPopup({ data, setData }) {
           className="NotificationPopup__closeIcon"
           src={close}
           alt="Иконка закрыть"
+          onClick={handleShown}
         />
       </header>
       <div className="NotificationPopup__content">

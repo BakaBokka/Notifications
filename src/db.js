@@ -1,5 +1,5 @@
 export const store = {
-  siteMode: "company", // or "company"
+  siteMode: "person", // or "company"
   notifications: [
     {
       id: 1,

@@ -125,12 +125,16 @@
     height: 100%;
     border-radius: 25px 25px 0px 0px;
     background-color: #f8f8fa;
+
     &__content {
       height: 100%;
+    justify-content: center;
+    background-color: #f8f8fa;
     }
     &__emptyPlug {
       margin: 0;
       transform: translateY(-50%);
+
     }
 
     &__header {

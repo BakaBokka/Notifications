@@ -2,7 +2,6 @@ import React from "react";
 import "./NotificationButton.scss";
 
 function NotificationButton({ handler, coords }) {
-
   //Координаты для кнопки
   const buttonCoords = coords
     ? {
