@@ -1,4 +1,5 @@
 export const store = {
+  siteMode: "company", // or "company"
   notifications: [
     {
       id: 1,
@@ -253,7 +254,7 @@ export const store = {
     },
     {
       id: 19,
-      closed:true,
+      closed: true,
 
       title: {
         order: "Заказ 19",

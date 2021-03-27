@@ -19,6 +19,7 @@ function App() {
         shown={shown}
         handleShown={handleShown}
         data={data.length}
+        siteMode={store.siteMode}
       />
       {shown && <NotificationPopup data={data} setData={setData} />}
     </div>
