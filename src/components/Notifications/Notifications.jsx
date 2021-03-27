@@ -50,8 +50,8 @@ function Notifications({ data, setData }) {
               <div className="Notifications__item-indicator-wrap">
                 <div
                   className="Notifications__item-indicator"
-                  onMouseOver={(e) => handleHoverOn(e, item.id)}
-                  onMouseOut={handleHoverOff}
+                  onPointerOver={(e) => handleHoverOn(e, item.id)}
+                  onPointerOut={handleHoverOff}
                 ></div>
               </div>
             )}

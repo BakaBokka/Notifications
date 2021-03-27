@@ -1,4 +1,4 @@
-# User List
+# Notifications
  https://bakabokka.github.io/Notifications/
 
 

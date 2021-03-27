@@ -18,8 +18,8 @@ function Notification({ shown, handleShown, counter, siteMode }) {
     <div
       className={hovered || shown ? styles : "Notification"}
       onClick={handleShown}
-      onMouseOver={handleHover}
-      onMouseOut={handleHover}
+      onPointerOver={handleHover}
+      onPointerOut={handleHover}
     >
       <img
         className="Notification__icon"
