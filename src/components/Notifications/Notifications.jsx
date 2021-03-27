@@ -83,7 +83,8 @@ function Notifications({ data, setData }) {
 
         {coords && <NotificationButton handler={handleRead} coords={coords} />}
       </ul>
-      <NotificationButton handler={handleShowMore} />
+      <div className="Notifications__button-wrap"><NotificationButton handler={handleShowMore} /></div>
+
     </>
   );
 }

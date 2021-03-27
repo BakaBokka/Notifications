@@ -1,12 +1,12 @@
 .NotificationButton {
   width: fit-content;
   padding: 9px 25px;
-  margin: 20px 0;
+  margin: 20px 0 0;
   outline: none;
   border: 1px solid #2051a3;
-  box-sizing: border-box;
+  box-sizing: none;
   border-radius: 35px;
-  font-family: " Open Sans";
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 12px;
@@ -26,6 +26,9 @@
   &_type_read {
     position: fixed;
     z-index: 10;
+    padding: 9px 20px;
+    margin: 0;
+    border: none;
     background: #2051a3;
     color: #fff;
     &:after {
@@ -35,7 +38,7 @@
       bottom: -15px;
       transform: translateX(-50%);
       border: 8px solid transparent;
-      border-top: 10px solid#2051a3;
+      border-top: 10px solid #2051a3;
     }
   }
 }
