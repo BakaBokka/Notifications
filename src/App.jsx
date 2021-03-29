@@ -29,6 +29,7 @@ function App() {
           handleShown={handleShown}
         />
       )}
+     {shown && <div className="App__underlay"/>}
     </div>
   );
 }

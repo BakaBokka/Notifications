@@ -8,6 +8,7 @@ function Notification({ shown, handleShown, counter, siteMode }) {
   const handleHover = () => {
     setHovered(!hovered);
   };
+  const indicator = counter > 99 ? "99" : counter;
 
   const styles =
     siteMode === "person"
@@ -28,7 +29,7 @@ function Notification({ shown, handleShown, counter, siteMode }) {
       />
       {counter ? (
         <div className="Notification__counter-wrap">
-          <span className="Notification__counter">{counter}</span>
+          <span className="Notification__counter">{indicator}</span>
         </div>
       ) : null}
     </div>

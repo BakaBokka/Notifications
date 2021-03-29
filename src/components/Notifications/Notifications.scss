@@ -12,6 +12,7 @@
     box-sizing: border-box;
     border-top: 1px solid #eeeff1;
     text-align: left;
+
   }
   &__item-header {
     position: relative;
@@ -94,4 +95,19 @@
   &__button-wrap {
     padding: 0 0 35px; //Тут больше поставил отступ, а то в Firefox'e кнопка попадает под оверлей
   }
+}
+
+
+@media (max-width: 375px) {
+  .Notifications {
+
+
+    &__item {
+     &:first-of-type{
+      border-top:none;
+     }
+
+
+    }
+}
 }

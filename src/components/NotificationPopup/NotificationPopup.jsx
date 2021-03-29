@@ -53,6 +53,7 @@ function NotificationPopup({ data, setData, handleShown }) {
         )}
       </div>
       <div className="NotificationPopup__overlay" />
+      
     </div>
   );
 }
