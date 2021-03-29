@@ -10,7 +10,6 @@
   border-radius: 15px;
   z-index: 1;
 
-
   &_empty {
     height: 390px;
     overflow: hidden;
@@ -127,8 +126,7 @@
     border-radius: 25px 25px 0px 0px;
 
     &__content {
-      max-height: 85vh;
-
+      min-height: 100%;
     }
 
     &__empty-plug {
